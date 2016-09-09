@@ -68,7 +68,7 @@
 			<div class='form-padding'>
 				<div id="wpoa-logo" style="width:64px; height:64px; float:right; background-size:100% 100%;"></div>
 				<p><span style="font-size:1.1em;"><strong>WP-OAuth <?php echo WPOA::PLUGIN_VERSION; ?></strong></span><br/>by <a href="http://glassocean.net" target="_blank"><strong>Perry Butler</strong></a></p>
-				<p>Rate it 5 stars: <a id="wpoa-rate-5stars" href="https://wordpress.org/support/view/plugin-reviews/wp-oauth?rate=5" target="_blank"><img src="http://ps.w.org/wp-oauth/assets/5stars.png" style="vertical-align:text-top;"></img></a></p>
+				<p>Rate it 5 stars: <a id="wpoa-rate-5stars" href="https://wordpress.org/support/view/plugin-reviews/wp-oauth?rate=5" target="_blank"><img src="http://ps.w.org/wp-oauth/assets/5stars.png" style="vertical-align:text-top;" /></a></p>
 				<nav><ul><li><a href="https://wordpress.org/plugins/wp-oauth/" target="_blank">WP-OAuth at WordPress.org</a></li><li><a href="https://github.com/perrybutler/WP-OAuth" target="_blank">WP-OAuth at GitHub.com</a></li><li><a href="http://glassocean.net/wp-oauth-enhances-your-wordpress-login-and-registration/" target="_blank">WP-OAuth at GlassOcean.net</a></li></ul></nav>
 			</div>
 		</div>
@@ -246,7 +246,7 @@
 				<th colspan="2">
 					<h4>Default Login Form / Page / Popup</h4>
 				</th>
-				</td>
+				</tr>
 				
 				<tr valign='top' class="has-tip">
 				<th scope='row'>Hide the WordPress login form: <a href="#" class="tip-button">[?]</a></th>
@@ -291,7 +291,7 @@
 				<th colspan="2">
 					<h4>Custom Login Forms</h4>
 				</th>
-				</td>
+				</tr>
 			
 				<tr valign='top' class="has-tip">
 				<th scope='row'>Custom form to show on the login screen: <a href="#" class="tip-button">[?]</a></th>
@@ -348,7 +348,7 @@
 				<th colspan="2">
 					<h4>Edit Design</h4>
 				</th>
-				</td>
+				</tr>
 				
 				<tr valign='top' class="has-tip">
 				<th scope='row'>Design name: <a href="#" class="tip-button">[?]</a></th>
@@ -582,7 +582,62 @@
 			<?php submit_button('Save all settings'); ?>
 			</div> <!-- .form-padding -->
 			</div> <!-- .wpoa-settings-section -->
-			<!-- END Login with Google section -->
+			<!-- END Login with WP OAuth Server section -->
+			
+			<!-- START Login with Open EdX section -->
+			<div id="wpoa-settings-section-login-with-open-edx" class="wpoa-settings-section">
+			<h3>Login with Open EdX</h3>
+			<div class='form-padding'>
+			<table class='form-table'>
+				<tr valign='top'>
+				<th scope='row'>Enabled:</th>
+				<td>
+					<input type='checkbox' name='wpoa_oauth_server_api_enabled' value='1' <?php checked(get_option('wpoa_oauth_server_api_enabled') == 1); ?> />
+				</td>
+				</tr>
+				
+				<tr valign='top'>
+				<th scope='row'>Client ID:</th>
+				<td>
+					<input type='text' name='wpoa_oauth_server_api_id' value='<?php echo get_option('wpoa_oauth_server_api_id'); ?>' />
+				</td>
+				</tr>
+
+				<tr valign='top'>
+				<th scope='row'>Client Secret:</th>
+				<td>
+					<input type='text' name='wpoa_oauth_server_api_secret' value='<?php echo get_option('wpoa_oauth_server_api_secret'); ?>' />
+				</td>
+				</tr>
+
+				<tr valign='top'>
+				<th scope='row'>OAuth Server Endpoint:</th>
+				<td>
+					<input type='text' name='wpoa_oauth_server_api_endpoint' value='<?php echo get_option('wpoa_oauth_server_api_endpoint'); ?>' />
+				</td>
+				</tr>
+
+				<tr valign='top'>
+				<th scope='row'>Login Button Text:</th>
+				<td>
+					<input type='text' name='wpoa_oauth_server_api_button_text' value='<?php echo get_option('wpoa_oauth_server_api_button_text'); ?>' />
+				</td>
+				</tr>
+			</table> <!-- .form-table -->
+			<p>
+				<strong>Instructions:</strong>
+				<ol>
+					<li>Log into the Open Edx website.</li>
+					<li>Go to Open EdX admin panel and click on the "Clients" tab and Add New Client.</li>
+					<li>Use <strong><?php echo $blog_url; ?></strong> as the Redirect URI. Click "Add Client".</li>
+					<li>Provide a login provider name as the button text option above. Login with "My Open EdX". This text will show on the login button.</li>
+					<li>Paste your Client ID/Secret provided by Open EdX into the fields above, then click the Save all settings button.</li>
+				</ol>
+			</p>
+			<?php submit_button('Save all settings'); ?>
+			</div> <!-- .form-padding -->
+			</div> <!-- .wpoa-settings-section -->
+			<!-- END Login with Open EdX section -->
 			
 			<!-- START Login with Facebook section -->
 			<div id="wpoa-settings-section-login-with-facebook" class="wpoa-settings-section">
