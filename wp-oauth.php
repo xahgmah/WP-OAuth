@@ -119,6 +119,12 @@ Class WPOA {
 		'wpoa_oauth_server_api_endpoint' => '',							// any string
 		'wpoa_oauth_server_api_button_text' => '',						// any string
 
+		'wpoa_edx_api_enabled' => 0,							// 0, 1
+		'wpoa_edx_api_id' => '',								// any string
+		'wpoa_edx_api_secret' => '',							// any string
+		'wpoa_edx_api_endpoint' => '',							// any string
+		'wpoa_edx_api_button_text' => '',						// any string
+
 		'wpoa_http_util' => 'curl',										// curl, stream-context
 		'wpoa_http_util_verify_ssl' => 1,								// 0, 1
 		'wpoa_restore_default_settings' => 0,							// 0, 1
@@ -733,6 +739,7 @@ Class WPOA {
 		$html .= $this->wpoa_login_button("instagram", "Instagram", $atts);
 		$html .= $this->wpoa_login_button("battlenet", "Battlenet", $atts);
 		$html .= $this->wpoa_login_button( 'oauth_server' , get_option( 'wpoa_oauth_server_api_button_text' ), $atts );
+		$html .= $this->wpoa_login_button( 'edx' , get_option( 'wpoa_edx_api_button_text' ), $atts );
 		if ($html == '') {
 			$html .= 'Sorry, no login providers have been enabled.';
 		}

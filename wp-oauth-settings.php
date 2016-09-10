@@ -592,35 +592,35 @@
 				<tr valign='top'>
 				<th scope='row'>Enabled:</th>
 				<td>
-					<input type='checkbox' name='wpoa_oauth_server_api_enabled' value='1' <?php checked(get_option('wpoa_oauth_server_api_enabled') == 1); ?> />
+					<input type='checkbox' name='wpoa_edx_api_enabled' value='1' <?php checked(get_option('wpoa_edx_api_enabled') == 1); ?> />
 				</td>
 				</tr>
 				
 				<tr valign='top'>
 				<th scope='row'>Client ID:</th>
 				<td>
-					<input type='text' name='wpoa_oauth_server_api_id' value='<?php echo get_option('wpoa_oauth_server_api_id'); ?>' />
+					<input type='text' name='wpoa_edx_api_id' value='<?php echo get_option('wpoa_edx_api_id'); ?>' />
 				</td>
 				</tr>
 
 				<tr valign='top'>
 				<th scope='row'>Client Secret:</th>
 				<td>
-					<input type='text' name='wpoa_oauth_server_api_secret' value='<?php echo get_option('wpoa_oauth_server_api_secret'); ?>' />
+					<input type='text' name='wpoa_edx_api_secret' value='<?php echo get_option('wpoa_edx_api_secret'); ?>' />
 				</td>
 				</tr>
 
 				<tr valign='top'>
 				<th scope='row'>OAuth Server Endpoint:</th>
 				<td>
-					<input type='text' name='wpoa_oauth_server_api_endpoint' value='<?php echo get_option('wpoa_oauth_server_api_endpoint'); ?>' />
+					<input type='text' name='wpoa_edx_api_endpoint' value='<?php echo get_option('wpoa_edx_api_endpoint'); ?>' />
 				</td>
 				</tr>
 
 				<tr valign='top'>
 				<th scope='row'>Login Button Text:</th>
 				<td>
-					<input type='text' name='wpoa_oauth_server_api_button_text' value='<?php echo get_option('wpoa_oauth_server_api_button_text'); ?>' />
+					<input type='text' name='wpoa_edx_api_button_text' value='<?php echo get_option('wpoa_edx_api_button_text'); ?>' />
 				</td>
 				</tr>
 			</table> <!-- .form-table -->

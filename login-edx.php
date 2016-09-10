@@ -7,15 +7,16 @@ if (!isset($_SESSION)) {
 
 # DEFINE THE OAUTH PROVIDER AND SETTINGS TO USE #
 $_SESSION['WPOA']['PROVIDER'] = 'Edx';
+$edx_url = trim(get_option('wpoa_edx_api_endpoint'),"/");
 define('HTTP_UTIL', get_option('wpoa_http_util'));
 define('CLIENT_ENABLED', get_option('wpoa_edx_api_enabled'));
 define('CLIENT_ID', get_option('wpoa_edx_api_id'));
 define('CLIENT_SECRET', get_option('wpoa_edx_api_secret'));
 define('REDIRECT_URI', rtrim(site_url(), '/') . '/');
 define('SCOPE', 'openid email profile'); // PROVIDER SPECIFIC: 'profile' is the minimum scope required to get the user's id from Edx
-define('URL_AUTH', get_option('wpoa_oauth_server_api_endpoint') . "/oauth2/authorize?");
-define('URL_TOKEN', get_option('wpoa_oauth_server_api_endpoint') . "/oauth2/access_token?");
-define('URL_USER', get_option('wpoa_oauth_server_api_endpoint') . "/oauth2/user_info?");
+define('URL_AUTH', $edx_url . "/oauth2/authorize?");
+define('URL_TOKEN',$edx_url . "/oauth2/access_token?");
+define('URL_USER', $edx_url . "/oauth2/user_info?");
 # END OF DEFINE THE OAUTH PROVIDER AND SETTINGS TO USE #
 
 // remember the user's last url so we can redirect them back to there after the login ends:
